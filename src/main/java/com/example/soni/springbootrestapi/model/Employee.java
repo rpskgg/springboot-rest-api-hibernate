@@ -8,6 +8,7 @@ import java.time.LocalDateTime;
 @Entity
 @Table(name = "employee")
 public class Employee implements Serializable {
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
@@ -24,10 +25,10 @@ public class Employee implements Serializable {
     @Column
     private LocalDate dob;
 
-    @Column(name = "created_on")
+    @Column(name = "created_on", insertable = false)
     private LocalDateTime createdOn;
 
-    @Column(name = "created_by")
+    @Column(name = "created_by", insertable = false)
     private String createdBy;
 
     public Employee(int id, String firstName, String sex, LocalDate dob) {

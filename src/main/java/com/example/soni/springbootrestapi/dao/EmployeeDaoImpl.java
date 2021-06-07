@@ -45,6 +45,7 @@ public class EmployeeDaoImpl implements EmployeeDao{
     public Employee create(Employee employee) {
         Session session = entityManager.unwrap(Session.class);
         int id = (int) session.save(employee);
+        System.out.println("id = "+id);
         Employee employee1 = session.load(Employee.class, id);
         return employee1;
     }
